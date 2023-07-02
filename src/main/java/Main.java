@@ -1,26 +1,40 @@
 /**
  * Created by iyasuwatts on 10/17/17.
  */
+import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args){
-        
-        int number = getInputNumber();
-        
+
+        //getInputNumber because it was a non-static method, made it a static method so the Class Main can call it. Non static are methods of an instance of a class,
+        // since there was no object created the old method did not exist. A static method always exist.
+        int number =  getInputNumber();
+
+
         int sum = sumOfNumbers(number);
-        
+
         System.out.println(sum);
 
     }
     
     // do this one and the lab is complete. really.
     // return the sum of 0 to n... if n == 3, the result should be 6
-    int sumOfNumbers(int n) {
-        return 0;
+    public static int sumOfNumbers(int n) {
+
+        int sum = 0;
+
+        for (int i = 0; 0 < n; i++){
+
+            // add N to the total sum of the number
+            sum += n;//3
+            n -= 1;
+        //have total increment with i till its less than n
+        }
+        return sum;
     }
     
     
-    int getInputNumber() {
+    public static int getInputNumber() {
         Scanner scan = new Scanner(System.in);
         System.out.print("Enter any number: ");
 
@@ -29,6 +43,7 @@ public class Main {
 
         // Closing Scanner after the use
         scan.close();
+
         return num;
     }
     
